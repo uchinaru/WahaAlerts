@@ -23,12 +23,7 @@ public class AlertsController {
 		
 		StringBuilder ST = new StringBuilder();
 		
-		ST.append("jogosonlinesdojonatasferreira@gmail.com ✳️2|"
-				+ "j.ogosonlinesdojonatasferreira@gmail.com ✳️3|"
-				+ "j.o.gosonlinesdojonatasferreira@gmail.com ✳️4|"
-				+ "j.o.g.osonlinesdojonatasferreira@gmail.com ✳️5|"
-				+ "j.o.g.o.sonlinesdojonatasferreira@gmail.com ✳️ 6|"
-				+ "j.o.g.o.s.onlinesdojonatasferreira@gmail.com ✳️ 7");
+		ST.append("Olá essa é uma mensagem via API");
 		
 		sendSimpleAlert("5511988447545@c.us",ST.toString(), "default");
 	}
