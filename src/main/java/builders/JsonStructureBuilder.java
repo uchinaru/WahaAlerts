@@ -1,4 +1,4 @@
-package builder;
+package builders;
 
 public class JsonStructureBuilder {
 	
