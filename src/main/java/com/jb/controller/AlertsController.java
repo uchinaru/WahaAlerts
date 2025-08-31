@@ -11,21 +11,27 @@ import org.apache.hc.core5.http.HttpEntity;
 import org.apache.hc.core5.http.ParseException;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.apache.hc.core5.http.io.entity.StringEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
 
-import builder.JsonStructureBuilder;
+import builders.JsonStructureBuilder;
 import utils.HTTPMethods;
 
+@RestController
+@CrossOrigin(origins = "*")
+@RequestMapping(value = "/api")
 public class AlertsController {
 	
 	public static HttpPost post;
 	
-	public static void main(String[] args) throws IOException, ParseException {
+	@RequestMapping(path = "/message", method = {RequestMethod.POST,RequestMethod.PUT})
+	public String reciveMessages(@RequestBody String mensagem) {
 		
-		StringBuilder ST = new StringBuilder();
-		
-		ST.append("Olá essa é uma mensagem via API");
-		
-		sendSimpleAlert("5511988447545@c.us",ST.toString(), "default");
+		System.out.println(mensagem);
+		return "Recebida";
 	}
 	
 	public static void getSessions() throws IOException, ParseException {
