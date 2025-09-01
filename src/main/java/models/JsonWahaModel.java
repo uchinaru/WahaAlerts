@@ -12,12 +12,13 @@ public class JsonWahaModel {
     public String session;
     public Metadata metadata;
     public Me me;
-    public Payload payload;
+    public PayloadModel payload;
     public String engine;
     public Environment environment;
     
 }
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 class Metadata {
     
 }
@@ -26,24 +27,6 @@ class Metadata {
 class Me {
     public String id;
     public String pushName;
-}
-
-@JsonIgnoreProperties(ignoreUnknown = true)
-class Payload {
-    public String id;
-    public long timestamp;
-    public String from;
-    public boolean fromMe;
-    public String participant;
-    public String source;
-    public String to;
-    public String body;
-    public boolean hasMedia;
-    public Media media;
-    public int ack;
-    public String ackName;
-    public List<Object> vCards;
-    public Data _data;
 }
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -142,6 +125,11 @@ class Data {
     public boolean placeholderCreatedWhenAccountIsHosted;
     public boolean galaxyFlowDisabled;
     public List<Object> links;
+    public String thumbnail;
+    public String deprecatedMms3Url;
+    public List<Object> interactiveAnnotations;
+    public String faviconMMSMetadata;
+    public String caption;
 }
 
 @JsonIgnoreProperties(ignoreUnknown = true)
