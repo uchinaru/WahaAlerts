@@ -1,8 +1,6 @@
 package com.jb.models;
 
-import java.sql.Date;
-
-import com.jb.enums.FormasDePagamentos;
+import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -27,7 +25,7 @@ public class Despesas {
 	private Date dataRegistro;
 	
 	@Column(name = "formas_de_pagamento")
-	private FormasDePagamentos formasPagamento;
+	private String formasPagamento;
 	
 	private String descricao;
 
@@ -63,11 +61,11 @@ public class Despesas {
 		this.dataRegistro = dataRegistro;
 	}
 
-	public FormasDePagamentos getFormasPagamento() {
+	public String getFormasPagamento() {
 		return formasPagamento;
 	}
 
-	public void setFormasPagamento(FormasDePagamentos formasPagamento) {
+	public void setFormasPagamento(String formasPagamento) {
 		this.formasPagamento = formasPagamento;
 	}
 
