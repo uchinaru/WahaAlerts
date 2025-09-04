@@ -1,4 +1,4 @@
-package enums;
+package com.jb.enums;
 
 public enum FormasDePagamentos {
 	

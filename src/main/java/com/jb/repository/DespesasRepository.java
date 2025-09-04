@@ -1,8 +1,8 @@
-package repository;
+package com.jb.repository;
 
 import org.springframework.data.repository.ListCrudRepository;
 
-import models.Despesas;
+import com.jb.models.Despesas;
 
 public interface DespesasRepository extends ListCrudRepository<Despesas, Integer> {
 

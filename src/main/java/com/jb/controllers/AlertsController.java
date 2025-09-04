@@ -1,4 +1,4 @@
-package controllers;
+package com.jb.controllers;
 
 import java.io.IOException;
 
@@ -12,12 +12,18 @@ import org.apache.hc.core5.http.ParseException;
 import org.apache.hc.core5.http.io.entity.EntityUtils;
 import org.apache.hc.core5.http.io.entity.StringEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import builders.JsonStructureBuilder;
-import enums.HTTPMethods;
+
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.jb.builders.JsonStructureBuilder;
+import com.jb.enums.HTTPMethods;
+import com.jb.models.JsonWahaModel;
 
 @RestController
 @CrossOrigin(origins = "*")
@@ -26,11 +32,19 @@ public class AlertsController {
 	
 	public static HttpPost post;
 	
-	@RequestMapping(path = "/message", method = {RequestMethod.POST,RequestMethod.PUT})
-	public String reciveMessages(@RequestBody String mensagem) {
-		
-		System.out.println(mensagem);
-		return "Recebida";
+	@PostMapping("/message")
+	public void reciveMessages(@RequestBody String mensagem) {
+		try {
+			System.out.println(mensagem);
+
+			ObjectMapper obj = new ObjectMapper();
+			
+			JsonWahaModel mensagemModel = obj.readValue(mensagem, JsonWahaModel.class);
+			
+			System.out.println(mensagemModel.toString());
+		} catch (Exception e) {
+			System.out.println("Error ao obter mensagem");
+		}
 	}
 	
 	public static void getSessions() throws IOException, ParseException {

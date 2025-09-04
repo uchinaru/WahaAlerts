@@ -1,8 +1,9 @@
-package models;
+package com.jb.models;
 
 import java.sql.Date;
 
-import enums.FormasDePagamentos;
+import com.jb.enums.FormasDePagamentos;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;

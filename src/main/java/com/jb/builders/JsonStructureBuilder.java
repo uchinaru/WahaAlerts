@@ -1,4 +1,4 @@
-package builders;
+package com.jb.builders;
 
 public class JsonStructureBuilder {
 	
