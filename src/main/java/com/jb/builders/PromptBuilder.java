@@ -8,7 +8,7 @@ public class PromptBuilder {
 			
 			O nome do item adquirido (resuma de forma clara e genérica, ex: "Compra do mês", "Tênis esportivo", "Cadeira de escritório").
 			
-			O valor gasto (somente número com duas casas decimais, ex: 500,00).
+			O valor gasto (somente número muito bem formatado considerando o seu tamanho, analise de forma correta, ex: 500,00 ou 10,000.00 ou 1.000.000,00).
 			
 			A categoria do item (exemplos: Alimentação, Transporte, Saúde, Educação, Lazer, Moradia, Tecnologia, Vestuário, Serviços, Outros).
 			
@@ -19,7 +19,7 @@ public class PromptBuilder {
 			Exemplo:
 			
 			Entrada: "Gastei 500 reais com mercado essa semana"
-			Saída: Compra do mês | 500,00 | Alimentação
+			Saída: Compra do mês|500,00|Alimentação
 			
 			Se qualquer uma das três informações estiver ausente ou impossível de identificar com clareza, retorne vazio.
 			""";
