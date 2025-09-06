@@ -1,6 +1,7 @@
 package com.jb.models;
 
 import java.util.Date;
+import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,7 +18,8 @@ public class Despesas {
 	
 	private String item;
 	
-	private String user;
+	@Column(name = "user_id")
+	private Long userId;
 	
 	private String valor;
 	
@@ -26,6 +28,8 @@ public class Despesas {
 	
 	@Column(name = "formas_de_pagamento")
 	private String formasPagamento;
+	
+	private String categoria;
 	
 	private String descricao;
 
@@ -77,12 +81,43 @@ public class Despesas {
 		this.descricao = descricao;
 	}
 
-	public String getUser() {
-		return user;
+	public Long getUserId() {
+		return userId;
 	}
 
-	public void setUser(String user) {
-		this.user = user;
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(dataRegistro, item, userId);
+	}
+	
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Despesas other = (Despesas) obj;
+		return Objects.equals(dataRegistro, other.dataRegistro) && Objects.equals(item, other.item)
+				&& Objects.equals(userId, other.userId);
+	}
+	
+	public String toString() {
+		
+		return "Despesa registrada: " + item + " Valor: " + valor + " Data do registro: " + dataRegistro + " Forma de pagamento: " + formasPagamento ;
 	}
 	
 }
