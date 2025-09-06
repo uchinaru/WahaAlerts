@@ -22,7 +22,7 @@ public class PayloadModel {
     public int ack;
     public String ackName;
     public List<Object> vCards;
-    public Data _data;
+    public DataWahaModel _data;
     
 	public String getId() {
 		return id;
@@ -102,17 +102,17 @@ public class PayloadModel {
 	public void setvCards(List<Object> vCards) {
 		this.vCards = vCards;
 	}
-	public Data get_data() {
-		return _data;
-	}
-	public void set_data(Data _data) {
-		this._data = _data;
-	}
+	
 	public JsonNode getReplyTo() {
 		return replyTo;
 	}
 	public void setReplyTo(JsonNode replyTo) {
 		this.replyTo = replyTo;
 	}
-	
+	public DataWahaModel get_data() {
+		return _data;
+	}
+	public void set_data(DataWahaModel _data) {
+		this._data = _data;
+	}
 }
