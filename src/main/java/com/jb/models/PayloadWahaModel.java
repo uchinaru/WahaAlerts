@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 
 @JsonIgnoreProperties
-public class PayloadModel {
+public class PayloadWahaModel {
 
     public String id;
     public long timestamp;

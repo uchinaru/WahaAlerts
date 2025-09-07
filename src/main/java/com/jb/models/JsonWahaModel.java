@@ -11,7 +11,7 @@ public class JsonWahaModel {
     public String session;
     public Metadata metadata;
     public Me me;
-    public PayloadModel payload;
+    public PayloadWahaModel payload;
     public String engine;
     public Environment environment;
     
