@@ -1,4 +1,4 @@
-package com.jb.builder;
+package com.jb.builders;
 
 public class PromptBuilder {
 	

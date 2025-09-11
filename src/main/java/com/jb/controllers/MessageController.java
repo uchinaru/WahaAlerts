@@ -1,4 +1,4 @@
-package com.jb.controller;
+package com.jb.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jb.service.ProcessMessageService;
+import com.jb.services.ProcessMessageService;
 
 @RestController
 @CrossOrigin(origins = "*")
