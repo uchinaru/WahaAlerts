@@ -1,4 +1,4 @@
-package com.jb.models;
+package com.jb.model;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

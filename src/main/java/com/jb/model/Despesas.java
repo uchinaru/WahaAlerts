@@ -1,4 +1,4 @@
-package com.jb.models;
+package com.jb.model;
 
 import java.util.Date;
 import java.util.Objects;
