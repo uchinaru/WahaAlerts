@@ -24,10 +24,10 @@ import com.google.genai.Client;
 import com.google.genai.types.GenerateContentResponse;
 import com.jb.builders.JsonStructureBuilder;
 import com.jb.builders.PromptBuilder;
+import com.jb.config.PropertiesConfig;
 import com.jb.enums.HTTPMethods;
 import com.jb.enums.ModelosIA;
 import com.jb.enums.TiposConta;
-import com.jb.factory.PropertiesFactory;
 import com.jb.models.Despesas;
 import com.jb.models.JsonWahaModel;
 import com.jb.models.Usuario;
@@ -46,7 +46,7 @@ public class AlertsController {
 	public UserRepository userRepository;
 	
 	@Autowired
-	public PropertiesFactory propertiesFactory;
+	public PropertiesConfig propertiesFactory;
 	
 	public static HttpPost post;
 	public String mensagemAnterior = "";

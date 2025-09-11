@@ -1,10 +1,10 @@
-package com.jb.factory;
+package com.jb.config;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PropertiesFactory {
+public class PropertiesConfig {
 	
 	@Value("${gemini.key}")
 	private String geminiKey;
