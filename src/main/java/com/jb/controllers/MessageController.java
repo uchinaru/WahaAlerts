@@ -37,7 +37,7 @@ import com.jb.repository.UserRepository;
 @RestController
 @CrossOrigin(origins = "*")
 @RequestMapping(value = "/api")
-public class AlertsController {
+public class MessageController {
 	
 	@Autowired
 	public DespesasRepository despesasRepository;
