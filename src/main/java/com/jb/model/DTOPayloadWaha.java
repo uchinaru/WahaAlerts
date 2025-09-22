@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.databind.JsonNode;
 
 @JsonIgnoreProperties
-public class PayloadWahaModel {
+public class DTOPayloadWaha {
 
     public String id;
     public long timestamp;
@@ -22,7 +22,7 @@ public class PayloadWahaModel {
     public int ack;
     public String ackName;
     public List<Object> vCards;
-    public DataWahaModel _data;
+    public DTODataWaha _data;
     
 	public String getId() {
 		return id;
@@ -109,10 +109,10 @@ public class PayloadWahaModel {
 	public void setReplyTo(JsonNode replyTo) {
 		this.replyTo = replyTo;
 	}
-	public DataWahaModel get_data() {
+	public DTODataWaha get_data() {
 		return _data;
 	}
-	public void set_data(DataWahaModel _data) {
+	public void set_data(DTODataWaha _data) {
 		this._data = _data;
 	}
 }

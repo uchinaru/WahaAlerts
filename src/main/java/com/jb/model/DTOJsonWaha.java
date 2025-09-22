@@ -4,14 +4,14 @@ import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-public class JsonWahaModel {
+public class DTOJsonWaha {
     public String id;
     public long timestamp;
     public String event;
     public String session;
     public Metadata metadata;
     public Me me;
-    public PayloadWahaModel payload;
+    public DTOPayloadWaha payload;
     public String engine;
     public Environment environment;
     
@@ -30,7 +30,7 @@ class Me {
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 class Media {
-    public DataWahaModel _data;
+    public DTODataWaha _data;
     public Id id;
     public int ack;
     public boolean hasMedia;

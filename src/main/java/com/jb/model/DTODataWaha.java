@@ -6,7 +6,7 @@ import java.util.Map;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class DataWahaModel {
+public class DTODataWaha {
 
 	public Id id;
     public boolean viewed;
