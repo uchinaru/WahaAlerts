@@ -10,14 +10,14 @@ import com.jb.service.ProcessMessageService;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping(value = "/api")
+@RequestMapping(value = "/api/message")
 public class MessageController {
 	
 	@Autowired
 	ProcessMessageService processMessageService;
 	
-	@PostMapping("/message")
-	public void reciveMessages(@RequestBody String mensagem) {
-		processMessageService.processaMensagem(mensagem);
+	@PostMapping("/register")
+	public int reciveMessages(@RequestBody String mensagem) {
+		return processMessageService.processaMensagem(mensagem);
 	}
 }
