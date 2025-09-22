@@ -2,8 +2,9 @@ package com.jb.enums;
 
 public enum TiposConta {
 	
-	VIP("1"),
-	GRATUITO("0");
+	GRATUITO("0"),
+	PAGO("1"),
+	TESTE_GRATUITO("2");
 	
 	public String descricao;
 	
