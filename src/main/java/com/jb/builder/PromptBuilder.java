@@ -2,26 +2,40 @@ package com.jb.builder;
 
 public class PromptBuilder {
 	
-	String instrucoes = """
-			Você receberá um texto descrevendo uma compra ou gasto.
-			Sua tarefa é identificar e extrair exatamente três informações, nesta ordem:
+	String promptRegisterExpend = """
+			Você receberá entradas de texto que podem ou não descrever uma compra ou gasto.
 			
-			O nome do item adquirido (resuma de forma clara e genérica, ex: "Compra do mês", "Tênis esportivo", "Cadeira de escritório").
+			Sua tarefa é identificar e extrair exatamente três informações, nesta ordem e com este formato:
 			
-			O valor gasto (somente número muito bem formatado considerando o seu tamanho, analise de forma correta, ex: 500,00 ou 10,000.00 ou 1.000.000,00).
+			[Nome genérico do item] | [Valor gasto bem formatado] | [Categoria]
 			
-			A categoria do item (exemplos: Alimentação, Transporte, Saúde, Educação, Lazer, Moradia, Tecnologia, Vestuário, Serviços, Outros).
+			Regras:
 			
-			Retorne os três elementos separados por pipe (|) e um espaço antes e depois de cada pipe.
-			Não inclua etiquetas, explicações ou qualquer outro conteúdo.
-			Não inclua mensagens repetidas em um curto intervalo de tempo, por exemplo menos de 15 minutos.
+			- O nome do item deve ser genérico, como: "Compra do mês", "Tênis esportivo", "Cadeira de escritório".
+			- O valor deve estar no formato monetário ex: 500,00 ou 10.000,00 ou 1.000.000,00.
+			- A categoria deve ser uma das seguintes: Alimentação, Transporte, Saúde, Educação, Lazer, Moradia, Tecnologia, Vestuário, Serviços, Outros.
+			- Se qualquer uma das três informações estiver ausente ou ambígua, retorne Null.
+			- Não responda a mensagens que não descrevem um gasto, como "Oi", "Olá", "Tenho uma dúvida", etc.
+			- Não inclua colchetes, vírgulas entre os campos, explicações ou qualquer outro conteúdo além do especificado.
+			- Não repita mensagens em menos de 5 minutos, mesmo se forem iguais.
 			
-			Exemplo:
+			Formato de resposta (somente quando válido):
+			Nome do item | Valor | Categoria
 			
-			Entrada: "Gastei 500 reais com mercado essa semana"
+			Exemplos:
+			
+			Entrada: Gastei 500 reais com mercado essa semana  
 			Saída: Compra do mês|500,00|Alimentação
 			
-			Se qualquer uma das três informações estiver ausente ou impossível de identificar com clareza, retorne vazio.
+			Entrada: Comprei um tênis por R$ 350,00  
+			Saída: Tênis esportivo|350,00|Vestuário
+			
+			Entrada: Olá, tudo bem?  
+			retorne Null
+			
+			Entrada: Comprei um presente  
+			retorne Null — falta valor e categoria
+			
 			""";
 	
 	String mesagem ="";
@@ -35,8 +49,8 @@ public class PromptBuilder {
 		return this;
 	}
 	
-	public String getPrompt() {
-		return instrucoes + "\n\nEntrada: \"" + mesagem + "\"\nSaída:";
+	public String getExpense() {
+		return promptRegisterExpend + "\n\nEntrada: \"" + mesagem + "\"\nSaída:";
 	}
 
 }
